@@ -95,8 +95,6 @@
         [self createTabSwipeScrollViewWithItems:items];
         [self addToolbarIntoSuperview];
         [self createPageViewController];
-
-        [self loadFirstViewController];
     }
     return self;
 }
@@ -111,8 +109,6 @@
         [self setToolbar:toolBar];
         [self createTabSwipeScrollViewWithItems:items];
         [self createPageViewController];
-
-        [self loadFirstViewController];
     }
     return self;
 }
@@ -128,6 +124,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self loadFirstViewController];
     [self.pageViewController viewWillAppear:animated];
 }
 
